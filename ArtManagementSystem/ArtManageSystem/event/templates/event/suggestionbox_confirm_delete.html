@@ -1,0 +1,28 @@
+{% extends 'adminlte/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Suggestion Box {% endblock %}
+
+{% block content %}
+
+<div class="box">
+    <div class="box-header">
+        <h3>Do you realy want to delete this {{object.category}}?</h3>
+        <p class="text-muted">{{object.description}}</p>
+    </div>
+  <div class="box-body">
+    <div class="row">
+        <div class="col-md-8">
+            <form action="" method="post">
+                {% csrf_token %}
+          {{form|crispy}}
+                <button type="submit" class="btn btn-danger">Yes I Confirm!</button>
+                <a href="{% url 'suggestion-box-update' pk=object.pk %}" class="btn btn btn-info pull-right">No Take Me Back</a>
+
+            </form>
+
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

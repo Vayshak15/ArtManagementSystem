@@ -1,0 +1,61 @@
+{% extends 'adminlte/lib/_main_sidebar.html' %}
+
+{% block nav_links %}
+    <li>
+        <a href="{% url 'ongoing-events' %}">
+            <i class="fa fa-dashboard"></i> <span>On Going Events</span>
+        </a>
+    </li>
+<li>
+        <a href="{% url 'open-registrations' %} ">
+            <i class="fa fa-dashboard"></i> <span>Registrations Open</span>
+        </a>
+    </li>
+
+<li>
+        <a href="{% url 'upcoming-events' %}">
+            <i class="fa fa-dashboard"></i> <span>Upcoming Events</span>
+        </a>
+    </li>
+<li>
+        <a href="{% url 'results-published-events' %}">
+            <i class="fa fa-dashboard"></i> <span>Results Published</span>
+        </a>
+    </li>
+
+<li>
+        <a href="{% url 'awaiting-for-result' %}">
+            <i class="fa fa-dashboard"></i> <span>Awaiting Results</span>
+        </a>
+    </li>
+<hr>
+<li>
+        <a href="{% url 'scoreboard'%}">
+            <i class="fa fa-dashboard"></i> <span>Score Board</span>
+        </a>
+    </li>
+<hr>
+<li>
+        <a href="{% url 'suggestion-box-list'%}">
+            <i class="fa fa-dashboard"></i> <span>Suggestion Box</span>
+        </a>
+    </li>
+
+<hr>
+<li>
+        <a href="{% url 'form-handling'%}">
+            <i class="fa fa-dashboard"></i> <span>Form Handling</span>
+        </a>
+    </li>
+<li>
+ <a href="{% url 'form-handling-blog'%}">
+            <i class="fa fa-dashboard"></i> <span>Blog Handling</span>
+        </a>
+    </li>
+<li>
+
+
+
+
+
+{% endblock nav_links %}

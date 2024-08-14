@@ -1,0 +1,48 @@
+{% extends 'adminlte/base.html' %}
+
+{% block title %} Mypage {% endblock %}
+
+{% block content %}
+
+<div class="box">
+    <div class="box-header">
+        <h3>Suggestion Box</h3>
+        <div class="float-right">
+            <a  class="btn btn-info" href="{% url 'suggestion-box-create'%}">New Suggestion?</a>
+        </div>
+    </div>
+  <div class="box-body">
+    <div class="row">
+        <div class="col-md-8"></div>
+        <table class="table table-stripped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Complaint</th>
+                <th>Category</th>
+                <th>Event</th>
+                <th>Created Date</th>
+                <th>Action</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for complaint in object_list %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{complaint.description}}</td>
+                <td>{{complaint.category}}</td>
+                <td>{{complaint.event.title}}</td>
+                <td>{{complaint.created_at}}</td>
+                <td>
+                    <a href="{% url 'suggestion-box-update' pk=complaint.pk %}" class="btn btn sm btn-success">
+                        Edit</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
